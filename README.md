@@ -17,15 +17,15 @@ The code is developed and tested with
 
 ## Data Preparation
 ### Data Download 
-The data used in our experiment are from [DDFF-12](https://hazirbas.com/datasets/ddff12scene/), [FoD500](https://github.com/dvl-tum/defocus-net),
+The data used in our experiment are from [FoD500](https://github.com/dvl-tum/defocus-net),  [DDFF-12](https://hazirbas.com/datasets/ddff12scene/),
 and [Mobile Depth](https://www.supasorn.com/dffdownload.html). 
 
+* For FoD500, we directly use the original raw data without pre-processing. 
 * For DDFF12, we provide our pre-processed data [here](https://pennstateoffice365-my.sharepoint.com/:u:/g/personal/fuy34_psu_edu/ERBeMZVm8UhNnQNIg1zXe6IBfLVpTxJtYuPymgU1TqjAbQ?e=g9u9kX). If you prefer to generate the training and validation split by yourself.
  Please download the ```Lightfield (24.5GB)``` and ```Depth (57.9MB)``` from the website, and 
 follow the instruction in the next section to prepare the train and validation set. The DDFF-12 test set
 is only needed if you wish to submit your test result to the [leaderboard](https://competitions.codalab.org/competitions/17807#learn_the_details). You can directly use 
 the pre-processed test set at the [ddff-pytorch](https://github.com/soyers/ddff-pytorch) repository.
-* For FoD500, we directly use the original raw data without pre-processing. 
 * For Mobile Depth, we need to reorganize the files. Please follow the steps shown in the next section. Note, no ground truth is provided in this dataset, and we only
 use it for qualitative evaluation. 
 
@@ -67,7 +67,7 @@ To evaluate on the DDFF-12 validation set, run
 python eval_DDFF12.py --stack_num 5 --loadmodel <CKPT_PTH> --data_path  <DDFF12_PTH> --use_diff 0/1
 ```
 The number generate at the end shows the metrics 
-```mse```,	```rms```, ```log_rms```, ```abs_rel```, ```sq_rel```,	```a1```, ```a2```, ```a3```, ```bad_px```, ```Bump.```, ```avgUnc.``` in order.
+```mse```,	```rms```, ```log_rms```, ```abs_rel```, ```sq_rel```,	```a1```, ```a2```, ```a3```, ```Bump.```, ```avgUnc.``` in order.
 Please check the [DDFF-12 dataset](https://arxiv.org/pdf/1704.01085.pdf) paper for their meaning, except ```avgUnc.``` 
 which is introduced by us to evaluate the network uncertainty to its prediction. 
 
