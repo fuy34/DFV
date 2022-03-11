@@ -48,7 +48,6 @@ class DDFF12Loader(Dataset):
         return self.hdf5[self.stack_key].shape[0]
 
     def __getitem__(self, idx):
-        # print(len(self.hdf5[self.stack_key]), self.hdf5[self.disp_key], idx)
         # Create sample dict
         try:
             if 'test' in self.stack_key:

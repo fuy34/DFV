@@ -2,7 +2,7 @@
 
 This is a PyTorch implementation of our CVPR-2022 paper:
 
-[Deep Depth from Focus with Differential Focus Volume](https://arxiv.org/pdf/2112.01712.pdf). 
+[Deep Depth from Focus with Differential Focus Volume](https://arxiv.org/pdf/2112.01712.pdf)
 
 [Fengting Yang](http://personal.psu.edu/fuy34/), [Xiaolei Huang](http://faculty.ist.psu.edu/suh972/), and 
 [Zihan Zhou](https://zihan-z.github.io/) 
@@ -12,7 +12,7 @@ Please feel free to contact Fengting Yang (fuy34bkup@gmail.com) if you have any 
 ## Prerequisites
 The code is developed and tested with
 - Python 3.6
-- Pytorch 1.0.0 and 1.6.0
+- Pytorch 1.0.0 (w/ Cuda 10.0) and 1.6.0 (w/ Cuda 10.2)
 - More details are available in ```requirements.txt```
 
 ## Data Preparation

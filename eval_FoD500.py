@@ -104,7 +104,6 @@ if __name__ == '__main__':
 
     final_res = (avgmetrics / test_num)[0]
     final_res = np.delete(final_res, 8)  # remove badpix result, we do not use it
-    # print('final results', final_res)
     print('==============  Final result =================')
     print("\n  " + ("{:>10} | " * 9).format("MSE", "RMS", "log RMS", "Abs_rel", "Sqr_rel", "a1", "a2", "a3", "bump"))
     print(("  {: 2.6f}  " * 9).format(*final_res[:-1].tolist()))

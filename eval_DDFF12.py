@@ -143,11 +143,10 @@ def main(image_size = (383, 552)):
     test_num = len(dataloader)
     time_rec = np.zeros(test_num)
     for inx, (img_stack, disp, foc_dist) in enumerate(dataloader):
-        # if inx not in [34, 19, 25, 74, 108]: continue
+        # if inx not in [34, 19, 25, 74, 108]: continue # paper viz images
         if inx % 10 == 0:
             print('processing: {}/{}'.format(inx, test_num))
 
-        # if inx >= test_num: break
         # print(img_stack.shape, disp.shape, foc_dist)
 
         img_stack = Variable(torch.FloatTensor(img_stack)).cuda()
@@ -229,8 +228,7 @@ def main(image_size = (383, 552)):
         torch.cuda.empty_cache()
 
     final_res = (avgmetrics /test_num)[0]
-    final_res = np.delete(final_res, 8) # remove badpix result, we do not use it
-    # print('final results', final_res)
+    final_res = np.delete(final_res, 8) # remove badpix result, we do not use it in our paper
     print('==============  Final result =================')
     print("\n  " + ("{:>10} | " * 10).format("MSE", "RMS", "log RMS", "Abs_rel", "Sqr_rel", "a1", "a2", "a3", "bump", "avgUnc"))
     print(("  {: 2.6f}  " * 10).format(*final_res.tolist()) )

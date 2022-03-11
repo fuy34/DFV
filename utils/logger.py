@@ -38,18 +38,7 @@ class Logger(object):
                 # we treat it as multiple image with channel 1:
                 if isinstance(images, (np.ndarray, np.generic)):
                     images = np.expand_dims(images, axis=1)
-                    # images = np.concatenate([images, images, images], axis=1)
                 else:
                     images = images.unsqueeze(1)
-                    # images = torch.cat([images, images, images], dim=1)
         images = make_grid(images,padding=5)
-        # print(images.max(), images.min(), images.shape)
         self.writer.add_image(tag, images, step)
-
-    # def val2uint8(mat, maxVal, minVal=0):
-    #     maxVal_mat = np.ones(mat.shape) * maxVal
-    #     minVal_mat = np.ones(mat.shape) * minVal
-    #
-    #     mat_vis = np.where(mat > maxVal_mat, maxVal_mat, mat)
-    #     mat_vis = np.where(mat < minVal_mat, minVal_mat, mat_vis)
-    #     return (mat_vis * 255. / maxVal).astype(np.uint8)

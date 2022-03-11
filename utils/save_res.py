@@ -1,7 +1,5 @@
 import shutil
-import numpy as np
 import torch
-from math import ceil
 import sys
 
 def write_log(viz, img1, img2, disp, logger, step, num_log_img=4, b_train=True, thres=1e-4):
