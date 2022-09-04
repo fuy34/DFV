@@ -71,6 +71,9 @@ The number generate at the end shows the metrics
 Please check the [DDFF-12 dataset](https://arxiv.org/pdf/1704.01085.pdf) paper for their meaning, except ```avgUnc.``` 
 which is introduced by us to evaluate the network uncertainty to its prediction. 
 
+Also if you are not using our pre-trained checkpoint please remove the following lines in ```eval_DDFF12.py```
+https://github.com/fuy34/DFV/blob/374420792ffde65bc68db101e25cdc5b6cbf0990/eval_DDFF12.py#L37-L41
+
 For website submission or visualization on the test set. 
 ```
 python DDFF12_submisson.py --data_path <TEST_SET_PTH> --loadmodel <CKPT_PTH> --use_diff 0/1 --outdir <DUMP_PTH>
